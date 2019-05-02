@@ -1,0 +1,69 @@
+#bootstrap-overrides {
+    color: rgb(84, 79, 79);
+}
+
+#bootstrap-overrides .btn.btn-info.calculate {
+    outline: none;
+    color: rgb(84, 79, 79);
+}
+
+#bootstrap-overrides .form-control.inputs {
+    width: 45%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#bootstrap-overrides .form-label-group.inputs {
+    width: 45%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#bootstrap-overrides .jumbotron.text-center {
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.3);
+}
+
+#bootstrap-overrides main > div > div > h1 {
+    text-shadow: 1px 3px 3px rgba(0,0,0,0.2);
+}
+
+#bootstrap-overrides .form-control.main-inputs {
+    margin: 10px auto;
+    text-align: center;
+    box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+#bootstrap-overrides .btn.btn-info.calculate.custom {
+    color: white;
+    box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+#bootstrap-overrides .col-md-6.text-center.left-box {
+    border-right: 2px solid rgba(204, 199, 199, .7);
+    margin: 20px auto;
+    display: block;
+    height: 270px;
+    
+}
+
+
+#bootstrap-overrides .col-md-6.text-center.right-box {
+    margin: 20px auto;
+    display: block;
+    height: 270px;
+}
+
+
+#bootstrap-overrides .displayText {
+    font-size: 24px; 
+    color: rgb(84, 79, 79); 
+    margin-top: 20px;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    visibility: hidden;
+}

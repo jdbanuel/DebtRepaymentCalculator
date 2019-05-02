@@ -1,0 +1,101 @@
+<% include ../partials/header %>
+    <main role="main">
+        <div class="jumbotron text-center" style="padding: 30px">
+            <div class="container">
+                <h1 class="jumbotron-heading" style="font-size: 45px;">Debt Repayment Calculator</h1>
+                <p class="lead" style="font-style: italic;">
+                    "Payoff your debt first. Freedom from debt is worth more than any amount you can earn."
+                </p>
+                <p class="lead" style="font-style: italic; margin: 4px auto;">- Mark Cuban</p>
+            </div>
+        </div>
+
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Please enter your starting debt and interest rate.</h2>
+                    <div style="width: 30%; margin:25px auto">
+                        <div class="form-label-group">
+                            <input type="number" id="debt" class="form-control main-inputs" placeholder="Debt" required autofocus>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="number" id="interestRate" class="form-control main-inputs" placeholder="Interest Rate" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row values">
+                <div class="col-md-6 text-center left-box">
+                    <div>
+                        <h2>Calculate using monthly payment</h2>
+                        <div class="form-label-group inputs">
+                            <input class="form-control" type="number" id="monthlyPayment" placeholder="Monthly Payment" style="padding: 10px auto; text-align:center; box-shadow: 2px 4px 3px rgba(0,0,0,0.3);">
+                        </div>
+                        <div>
+                            <button class="btn btn-info calculate custom" type="submit" id="howLongToPayoffSubmit">Calculate</button>
+                        </div>
+                        <div id="monthlyPaymentResult" class="invisible">
+                            <div id="calculatedMonths" class="displayText">
+                            </div>
+                            <div id="calculatedInterest" class="displayText">
+                            </div>
+                        </div>
+                     </div>    
+                </div>
+                
+                <div class="col-md-6 text-center right-box">
+                    <div>
+                        <h2>Calculate using time-to-payoff </h2>
+                        <div class="form-label-group inputs">
+                            <input class="form-control" type="number" id="timespan" placeholder="Months" style="padding: 10px auto; text-align:center; box-shadow: 2px 4px 3px rgba(0,0,0,0.3);">
+                        </div>
+                        <div>
+                            <button class="btn btn-info calculate custom" type="submit" id="howMuchToPaySubmit">Calculate</button>
+                        </div>
+                        <div id="howMuchToPayResult" class="invisible">
+                            <div id="calculatedAdvisedPayment" class="displayText">
+                            </div>
+                            <div id="calculatedAdvisedPaymentInterest" class="displayText">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    <script type="text/javascript">
+        function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "js/index.js";
+        document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
+    
+    <script type="text/javascript">
+        let debtInput = document.getElementById("debt");
+        let rateInput = document.getElementById("interestRate");
+        let alertMonthsSubmit = document.getElementById("howMuchToPaySubmit");
+        let alertPaymentSubmit = document.getElementById("howLongToPayoffSubmit");
+        function debtBlankAlert() {
+            if (!debtInput.value > 0 || !rateInput.value > 0){
+                swal({
+                  type: 'error',
+                  title: 'Oops...',
+                  text: 'Please verify you have entered a starting debt and interest rate.',
+                });
+                return;
+            }
+        }
+        alertMonthsSubmit.addEventListener("click", debtBlankAlert);
+        alertPaymentSubmit.addEventListener("click", debtBlankAlert);
+        
+    </script>
+    
+    </main>
+<% include ../partials/footer %>
